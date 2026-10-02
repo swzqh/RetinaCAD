@@ -1,0 +1,227 @@
+{
+  "schema_version": "1.0.0",
+  "model_id": "A3_RIDGE_LAMBDA_MIN_LOCKED_20260817",
+  "created_at": "2026-08-17T14:14:23+08:00",
+  "model_type": "Ridge penalized logistic regression",
+  "outcome": "CAD",
+  "outcome_definition": "Fixed stenosis >=20% in a major epicardial coronary artery or branch",
+  "probability_target": "Probability of CAD under the study outcome definition",
+  "training_n": 150,
+  "selected_lambda": 0.1,
+  "lambda_selection": {
+    "rule": "minimum mean 5-fold cross-validated log-loss on the full development cohort",
+    "fold_seed": 20260727,
+    "candidate_grid": [
+      0.0001,
+      0.0003,
+      0.001,
+      0.003,
+      0.01,
+      0.03,
+      0.1,
+      0.3,
+      1.0
+    ]
+  },
+  "input_policy": {
+    "unknown_fields": "reject",
+    "non_numeric_values": "reject",
+    "binary_values": "must be 0 or 1",
+    "missing_values": "replace with the locked training-cohort median"
+  },
+  "standardized_formula": {
+    "intercept": 1.0583687336666192,
+    "features": [
+      {
+        "feature": "Age",
+        "label": "Age",
+        "unit_or_coding": "years",
+        "type": "continuous",
+        "missing_value_fill": 63.0,
+        "mean": 61.7,
+        "sd_population": 7.164495795239188,
+        "standardized_coefficient": 0.06346241411128126,
+        "raw_scale_coefficient": 0.008857903741593662
+      },
+      {
+        "feature": "Male",
+        "label": "Male sex",
+        "unit_or_coding": "0=female; 1=male",
+        "type": "binary",
+        "missing_value_fill": 1.0,
+        "mean": 0.6,
+        "sd_population": 0.4898979485566356,
+        "standardized_coefficient": 0.32829841458872305,
+        "raw_scale_coefficient": 0.6701363325892137
+      },
+      {
+        "feature": "HTN",
+        "label": "Hypertension",
+        "unit_or_coding": "0=no; 1=yes",
+        "type": "binary",
+        "missing_value_fill": 1.0,
+        "mean": 0.5133333333333333,
+        "sd_population": 0.4998221906060416,
+        "standardized_coefficient": 0.39730197967955466,
+        "raw_scale_coefficient": 0.7948866359811282
+      },
+      {
+        "feature": "DM",
+        "label": "Diabetes mellitus",
+        "unit_or_coding": "0=no; 1=yes",
+        "type": "binary",
+        "missing_value_fill": 0.0,
+        "mean": 0.19333333333333333,
+        "sd_population": 0.39491208585653026,
+        "standardized_coefficient": 0.22466377705828772,
+        "raw_scale_coefficient": 0.5688956735041708
+      },
+      {
+        "feature": "Smoke",
+        "label": "Smoking",
+        "unit_or_coding": "0=no; 1=yes, as recorded",
+        "type": "binary",
+        "missing_value_fill": 0.0,
+        "mean": 0.38666666666666666,
+        "sd_population": 0.4869861964733246,
+        "standardized_coefficient": 0.03634595645683317,
+        "raw_scale_coefficient": 0.07463446956000953
+      },
+      {
+        "feature": "LVEF_pct",
+        "label": "Left ventricular ejection fraction",
+        "unit_or_coding": "%",
+        "type": "continuous",
+        "missing_value_fill": 68.0,
+        "mean": 67.02,
+        "sd_population": 7.516621581535151,
+        "standardized_coefficient": -0.1519733518581385,
+        "raw_scale_coefficient": -0.020218305552519293
+      },
+      {
+        "feature": "LVMI_g_m2",
+        "label": "Left ventricular mass index",
+        "unit_or_coding": "g/m^2",
+        "type": "continuous",
+        "missing_value_fill": 91.4332131518045,
+        "mean": 95.23121090613643,
+        "sd_population": 26.415352223159292,
+        "standardized_coefficient": 0.14539943312231715,
+        "raw_scale_coefficient": 0.005504353373521941
+      },
+      {
+        "feature": "RWT",
+        "label": "Relative wall thickness",
+        "unit_or_coding": "unitless",
+        "type": "continuous",
+        "missing_value_fill": 0.37617924528301894,
+        "mean": 0.38565830651905053,
+        "sd_population": 0.060641307071383835,
+        "standardized_coefficient": 0.09037164281663786,
+        "raw_scale_coefficient": 1.4902654177664243
+      },
+      {
+        "feature": "LVDdI_mm_m2",
+        "label": "Indexed LV end-diastolic diameter",
+        "unit_or_coding": "mm/m^2",
+        "type": "continuous",
+        "missing_value_fill": 28.186266938423316,
+        "mean": 28.556363913413836,
+        "sd_population": 3.1154562413021263,
+        "standardized_coefficient": -0.29407999657160877,
+        "raw_scale_coefficient": -0.09439387806926668
+      },
+      {
+        "feature": "L2ParaFovea",
+        "label": "Deep-layer parafoveal vessel density",
+        "unit_or_coding": "device output",
+        "type": "continuous",
+        "missing_value_fill": 53.565,
+        "mean": 53.20633333333333,
+        "sd_population": 4.775038487337621,
+        "standardized_coefficient": -0.22972605983064068,
+        "raw_scale_coefficient": -0.0481097818247591
+      },
+      {
+        "feature": "L2PeriFovea",
+        "label": "Deep-layer perifoveal vessel density",
+        "unit_or_coding": "device output",
+        "type": "continuous",
+        "missing_value_fill": 49.739999999999995,
+        "mean": 49.16986666666667,
+        "sd_population": 6.951795833851534,
+        "standardized_coefficient": -0.1664377924014942,
+        "raw_scale_coefficient": -0.023941697423136482
+      },
+      {
+        "feature": "VD",
+        "label": "Retinal arterial vessel density",
+        "unit_or_coding": "pipeline output",
+        "type": "continuous",
+        "missing_value_fill": 0.03681632796234435,
+        "mean": 0.03728689026579943,
+        "sd_population": 0.02041314590548942,
+        "standardized_coefficient": -0.3256812010670102,
+        "raw_scale_coefficient": -15.954483575186192
+      },
+      {
+        "feature": "Ratio",
+        "label": "Artery-to-vein median diameter ratio",
+        "unit_or_coding": "unitless",
+        "type": "continuous",
+        "missing_value_fill": 1.0865630160772901,
+        "mean": 1.086024597338669,
+        "sd_population": 0.20174658752730273,
+        "standardized_coefficient": -0.3076662650088115,
+        "raw_scale_coefficient": -1.5250134774506383
+      }
+    ],
+    "linear_predictor": "intercept + sum(standardized_coefficient * (x - mean) / sd_population)"
+  },
+  "raw_scale_formula": {
+    "intercept": 8.502574990055745,
+    "coefficients": {
+      "Age": 0.008857903741593662,
+      "Male": 0.6701363325892137,
+      "HTN": 0.7948866359811282,
+      "DM": 0.5688956735041708,
+      "Smoke": 0.07463446956000953,
+      "LVEF_pct": -0.020218305552519293,
+      "LVMI_g_m2": 0.005504353373521941,
+      "RWT": 1.4902654177664243,
+      "LVDdI_mm_m2": -0.09439387806926668,
+      "L2ParaFovea": -0.0481097818247591,
+      "L2PeriFovea": -0.023941697423136482,
+      "VD": -15.954483575186192,
+      "Ratio": -1.5250134774506383
+    },
+    "linear_predictor": "intercept + sum(raw_scale_coefficient * x_after_missing_value_fill)"
+  },
+  "probability_formula": "1 / (1 + exp(-linear_predictor))",
+  "apparent_full_cohort_performance": {
+    "n": 150,
+    "cad_n": 104,
+    "non_cad_n": 46,
+    "auc": 0.862876254180602,
+    "brier": 0.14296909883172537,
+    "log_loss": 0.4400899629243984
+  },
+  "internal_validation_performance": {
+    "method": "20 repetitions of stratified outer 5-fold cross-validation",
+    "auc_median": 0.8044523411371237,
+    "auc_q025": 0.7674122073578595,
+    "auc_q975": 0.8189433528428093,
+    "brier_median": 0.1632263564818929,
+    "log_loss_median": 0.4922183609158898,
+    "calibration_intercept_median": 0.009546349698854411,
+    "calibration_slope_median": 1.031841605269894
+  },
+  "source_files": {
+    "patient_level_data": "Internal development-cohort data; not distributed",
+    "patient_level_data_sha256": "96E7021EBABFE0167C6229A8E27F1D0912253933DF5BBE14355F3CD15C38B963",
+    "nested_cv_results": "Internal cross-validation results; not distributed",
+    "nested_cv_results_sha256": "560E5987C2A657E753485210C9D87B26A8CC5D8A30F3832AC8457626F16E664F",
+    "core_analysis_code": "Internal model-development analysis code; not distributed",
+    "core_analysis_code_sha256": "A51113F6F29938050C5D7494121248F5012955C265382958E47F47F9462BEC66"
+  }
+}

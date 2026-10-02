@@ -1,0 +1,192 @@
+[
+  {
+    "case_id": "synthetic_case_01",
+    "inputs": {
+      "Age": 50,
+      "Male": 0,
+      "HTN": 0,
+      "DM": 0,
+      "Smoke": 0,
+      "LVEF_pct": 70,
+      "LVMI_g_m2": 80,
+      "RWT": 0.35,
+      "LVDdI_mm_m2": 30,
+      "L2ParaFovea": 58,
+      "L2PeriFovea": 55,
+      "VD": 0.06,
+      "Ratio": 1.2
+    },
+    "expected_probability": 0.22545899869472588
+  },
+  {
+    "case_id": "synthetic_case_02",
+    "inputs": {
+      "Age": 75,
+      "Male": 1,
+      "HTN": 1,
+      "DM": 1,
+      "Smoke": 1,
+      "LVEF_pct": 55,
+      "LVMI_g_m2": 140,
+      "RWT": 0.5,
+      "LVDdI_mm_m2": 25,
+      "L2ParaFovea": 45,
+      "L2PeriFovea": 40,
+      "VD": 0.015,
+      "Ratio": 0.8
+    },
+    "expected_probability": 0.9913148988099363
+  },
+  {
+    "case_id": "synthetic_case_03",
+    "inputs": {
+      "Age": 63,
+      "Male": 1,
+      "HTN": 1,
+      "DM": 0,
+      "Smoke": 0,
+      "LVEF_pct": 68,
+      "LVMI_g_m2": 95,
+      "RWT": 0.38,
+      "LVDdI_mm_m2": 28,
+      "L2ParaFovea": 53,
+      "L2PeriFovea": 49,
+      "VD": 0.037,
+      "Ratio": 1.09
+    },
+    "expected_probability": 0.8349942844586487
+  },
+  {
+    "case_id": "synthetic_case_04_all_missing",
+    "inputs": {
+      "Age": null,
+      "Male": null,
+      "HTN": null,
+      "DM": null,
+      "Smoke": null,
+      "LVEF_pct": null,
+      "LVMI_g_m2": null,
+      "RWT": null,
+      "LVDdI_mm_m2": null,
+      "L2ParaFovea": null,
+      "L2PeriFovea": null,
+      "VD": null,
+      "Ratio": null
+    },
+    "expected_probability": 0.823727469896906
+  },
+  {
+    "case_id": "synthetic_case_05",
+    "inputs": {
+      "Age": 40,
+      "Male": 0,
+      "HTN": 0,
+      "DM": 0,
+      "Smoke": 0,
+      "LVEF_pct": 78,
+      "LVMI_g_m2": 60,
+      "RWT": 0.28,
+      "LVDdI_mm_m2": 32,
+      "L2ParaFovea": 60,
+      "L2PeriFovea": 58,
+      "VD": 0.07,
+      "Ratio": 1.4
+    },
+    "expected_probability": 0.07445117455558821
+  },
+  {
+    "case_id": "synthetic_case_06",
+    "inputs": {
+      "Age": 80,
+      "Male": 1,
+      "HTN": 1,
+      "DM": 1,
+      "Smoke": 0,
+      "LVEF_pct": 40,
+      "LVMI_g_m2": 180,
+      "RWT": 0.65,
+      "LVDdI_mm_m2": 20,
+      "L2ParaFovea": 42,
+      "L2PeriFovea": 38,
+      "VD": 0.01,
+      "Ratio": 0.7
+    },
+    "expected_probability": 0.9982572082199924
+  },
+  {
+    "case_id": "synthetic_case_07",
+    "inputs": {
+      "Age": 65,
+      "Male": 0,
+      "HTN": 1,
+      "DM": 0,
+      "Smoke": 1,
+      "LVEF_pct": 65,
+      "LVMI_g_m2": 110,
+      "RWT": 0.42,
+      "LVDdI_mm_m2": 27,
+      "L2ParaFovea": 50,
+      "L2PeriFovea": 47,
+      "VD": 0.025,
+      "Ratio": 1.0
+    },
+    "expected_probability": 0.8655067520921567
+  },
+  {
+    "case_id": "synthetic_case_08",
+    "inputs": {
+      "Age": 55,
+      "Male": 1,
+      "HTN": 0,
+      "DM": 1,
+      "Smoke": 0,
+      "LVEF_pct": 72,
+      "LVMI_g_m2": 85,
+      "RWT": 0.33,
+      "LVDdI_mm_m2": 31,
+      "L2ParaFovea": 56,
+      "L2PeriFovea": 54,
+      "VD": 0.055,
+      "Ratio": 1.3
+    },
+    "expected_probability": 0.4898782695265821
+  },
+  {
+    "case_id": "synthetic_case_09",
+    "inputs": {
+      "Age": 70,
+      "Male": 1,
+      "HTN": 1,
+      "DM": 0,
+      "Smoke": 1,
+      "LVEF_pct": 60,
+      "LVMI_g_m2": 120,
+      "RWT": 0.48,
+      "LVDdI_mm_m2": 24,
+      "L2ParaFovea": 48,
+      "L2PeriFovea": 44,
+      "VD": 0.02,
+      "Ratio": 0.9
+    },
+    "expected_probability": 0.9708375738808876
+  },
+  {
+    "case_id": "synthetic_case_10",
+    "inputs": {
+      "Age": 60,
+      "Male": 0,
+      "HTN": 0,
+      "DM": 1,
+      "Smoke": 0,
+      "LVEF_pct": 66,
+      "LVMI_g_m2": 100,
+      "RWT": 0.4,
+      "LVDdI_mm_m2": 29,
+      "L2ParaFovea": 52,
+      "L2PeriFovea": 50,
+      "VD": 0.04,
+      "Ratio": 1.1
+    },
+    "expected_probability": 0.6599716914542861
+  }
+]

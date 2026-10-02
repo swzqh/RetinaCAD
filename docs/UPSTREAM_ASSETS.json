@@ -1,0 +1,830 @@
+{
+  "description": "Checksums of the validated local upstream tree; files are not distributed in this repository.",
+  "files": [
+    {
+      "path": "retina_pipeline/lwnet/analyze_results.py",
+      "bytes": 10971,
+      "sha256": "8c54d4fc90c883ee2b1f8149f7fbcb1020bc6a08b291b8bb1e845c2de6956113"
+    },
+    {
+      "path": "retina_pipeline/lwnet/environment.txt",
+      "bytes": 6667,
+      "sha256": "c437bc2dc738e5fc3fb728f91ae6680c20d889f0946900b4379c68d46495a965"
+    },
+    {
+      "path": "retina_pipeline/lwnet/experiments/big_wnet_drive_av/config.cfg",
+      "bytes": 447,
+      "sha256": "77474129a3c41816c7034616c2ce0bbc8a5740928d93ad00e46066e8dc7a6822"
+    },
+    {
+      "path": "retina_pipeline/lwnet/experiments/big_wnet_drive_av/model_checkpoint.pth",
+      "bytes": 3495426,
+      "sha256": "3ef72c572c436d758b7d266ed2719e82b69ae472ea1a16e0b60ba847c920bfb5"
+    },
+    {
+      "path": "retina_pipeline/lwnet/experiments/big_wnet_drive_av/val_metrics.txt",
+      "bytes": 51,
+      "sha256": "97dd153d871c131bca38a9e33dedba0bee03667698874375cd09e4b668383c00"
+    },
+    {
+      "path": "retina_pipeline/lwnet/generate_av_results.py",
+      "bytes": 7929,
+      "sha256": "c9adc7b130a7cc45924d7b0e973e9c31d158971ebafef862514edbe56309d511"
+    },
+    {
+      "path": "retina_pipeline/lwnet/generate_results.py",
+      "bytes": 6878,
+      "sha256": "871b6022dc69fb0344b3ce7e06167320d7b97109fbf638a1d9434c5e6d99fcb2"
+    },
+    {
+      "path": "retina_pipeline/lwnet/LICENSE",
+      "bytes": 1071,
+      "sha256": "7b97def8202bc25dd9f8d75ea69dcdaa4183112cf5ca05391cc7b13558c46bbe"
+    },
+    {
+      "path": "retina_pipeline/lwnet/models/fig2.png",
+      "bytes": 435376,
+      "sha256": "6ffb62b1f8d8440508bcdcfbcc513aa66ca2907c326b1ba12d1347886d7d591a"
+    },
+    {
+      "path": "retina_pipeline/lwnet/models/get_model.py",
+      "bytes": 1922,
+      "sha256": "53f79d5275f9d156c64d5fe9f0d6f3af2c33f6110a43533760119e06b30a7d34"
+    },
+    {
+      "path": "retina_pipeline/lwnet/models/res_unet_adrian.py",
+      "bytes": 8290,
+      "sha256": "021f4f37405acf517e247e769dd0a89cf986d66eba733d012027a085617f15cb"
+    },
+    {
+      "path": "retina_pipeline/lwnet/predict_one_image.py",
+      "bytes": 8409,
+      "sha256": "05f6109fea325f69f7cd7d5a5266fcb9c3dd3a04b0856500c2c790627af6baaf"
+    },
+    {
+      "path": "retina_pipeline/lwnet/predict_one_image_av.py",
+      "bytes": 9857,
+      "sha256": "5ede4419851506709935acca027848f675a60d1a77b82f2ca5a611c1c1a41a82"
+    },
+    {
+      "path": "retina_pipeline/lwnet/README.md",
+      "bytes": 15678,
+      "sha256": "59a960da504ac2f20d074aaab4bc7fdef7f20a76114b83d4f4723aa82c7030c5"
+    },
+    {
+      "path": "retina_pipeline/lwnet/utils/evaluation.py",
+      "bytes": 4250,
+      "sha256": "481440aa7c3baa18dcb2d209958e1ae4892c0c9e57452aeba3d00d420fde730f"
+    },
+    {
+      "path": "retina_pipeline/lwnet/utils/get_loaders.py",
+      "bytes": 7281,
+      "sha256": "e9db6b7528925b2831845620069eb86e3205a230502afc800b0c944d310da27d"
+    },
+    {
+      "path": "retina_pipeline/lwnet/utils/model_saving_loading.py",
+      "bytes": 1251,
+      "sha256": "3acd1171e1d495e3f3caf24ebc8db5ba18930546d560430d72bbd5c26eff362d"
+    },
+    {
+      "path": "retina_pipeline/lwnet/utils/paired_transforms_tv04.py",
+      "bytes": 57950,
+      "sha256": "056f526a832664ae1e55a6f17cde76411414184792c98716ffcadb8a2909993e"
+    },
+    {
+      "path": "retina_pipeline/lwnet/utils/reproducibility.py",
+      "bytes": 440,
+      "sha256": "a19760d2be77df561dedcf48ff720245a4bc2c67e9135f7eda0666dd7e4aac88"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/configs/config_.sh",
+      "bytes": 9031,
+      "sha256": "1f80bf73f489d134e42e8c7ea6860fe635afc69683f4b77c14c2ae112c8cbf52"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/configs/config_personal.sh",
+      "bytes": 354,
+      "sha256": "1aea1cdb55c781c81d953873b8b40f75b29b955fde47ce9b1c93b5ccb9f1aa66"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/aria_batch.sh",
+      "bytes": 862,
+      "sha256": "c9a0fff03674ad496226fa34e01e04d50d09d4a65f919bba36bedcd6613f33e8"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/basic_preprocessing.py",
+      "bytes": 1525,
+      "sha256": "146d526155eef0f36f65d7dbd58c46c39d4212538508be483788a8e72103ecfd"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/Change_the_name_LWNEToutput.py",
+      "bytes": 748,
+      "sha256": "24c30663510174ad3d2515c8417e910740c75ca09c5a6e8c23c05160bf6db791"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/ClassifyAVLwnet.sh",
+      "bytes": 2779,
+      "sha256": "8f6a8bfa86830b20058615923cab2da7f1019bbdfc287ac87bdcfc7fc5446993"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch1.txt",
+      "bytes": 23001,
+      "sha256": "1b7e866034ba46c0a1aa4db8390148d37fa31d5720e65d1b8950fdfcf6af07cc"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch115.txt",
+      "bytes": 22552,
+      "sha256": "d7c9483c6eed0ce49969fa5805d5be040bee19d091a745a6e78e0430fb1ca620"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch13.txt",
+      "bytes": 4857,
+      "sha256": "30a8a0b3a76610572cdceb3a175f0cbbf9a954c304535814bd1238bfe0fbf63f"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch134.txt",
+      "bytes": 23687,
+      "sha256": "6b9d2b81b3d3f1e32670876c4412cce73d757ec63cc1b4534f066fc28e0e83be"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch153.txt",
+      "bytes": 23392,
+      "sha256": "ff67f7e1d297da8b45db34cecd25c5747684af06ef632e5123271106d69f672a"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch17.txt",
+      "bytes": 4857,
+      "sha256": "b22300b4d9840529721e775989f123e33df7d9210656892f75e382c9d4de9954"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch172.txt",
+      "bytes": 23222,
+      "sha256": "3786d4114eb531939710d4b07c9916b47644d5e7d1aebb598c625dda3785d60b"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch191.txt",
+      "bytes": 267,
+      "sha256": "9ee5d3e6b09987dc93fe0ab3ce5ffd8c2a5e18ec951fcd4ddd5513e855f68223"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch20.txt",
+      "bytes": 22551,
+      "sha256": "4b90fd7d350fc2be85f9724e6407d86289feaa46cbddf309821766d8111fb6fa"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch21.txt",
+      "bytes": 4873,
+      "sha256": "7285da5f7c2563d73fcc79446e336556cbf5aed39179b592f4202f2907ae17c2"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch25.txt",
+      "bytes": 4873,
+      "sha256": "627d5242d7280390f3a84d06cbc825313af5ecbc87e6e0916c19e9ae8bd204d0"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch29.txt",
+      "bytes": 5434,
+      "sha256": "94d28d83a2a88e66bd72f8642f74de74294919315993fea25f0b5148eb2ef3d4"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch33.txt",
+      "bytes": 4873,
+      "sha256": "8d12329eea5dbd17b70465844ed21047ddedb4ed13087a0148309db967b41acd"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch37.txt",
+      "bytes": 4873,
+      "sha256": "26fced4f4bd0e47d594db8f61e9e16544dd88af98bdb7f35fe913e1146067ef3"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch39.txt",
+      "bytes": 24363,
+      "sha256": "cd9f7a4d4367bcf9b2042f7888b11ff2c9b60d10a4067a5c57f24a130468609b"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch41.txt",
+      "bytes": 253,
+      "sha256": "980a26f941408f36617edc6f49d9e35e648f259997320cb5b9043b0c6b45867b"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch5.txt",
+      "bytes": 4855,
+      "sha256": "84b387fc7f206377ef8da4b67e49b7e0056d699f08fe9827472d7bdca7956b83"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch58.txt",
+      "bytes": 23456,
+      "sha256": "2e42d5dde8e589273dfb60008547eee3d61282a218a2c0f3d28f9250db0e3927"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch77.txt",
+      "bytes": 23685,
+      "sha256": "3fd2850f975bb3a082aa789f8b2f635747c2bee8c7d1de2b1ea5807c7792a471"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch9.txt",
+      "bytes": 5417,
+      "sha256": "cbbf19b0bfbf6aebf0e4e02fc28f93d18cc83bd73dd01b0f10c412bcfc424efd"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/batch96.txt",
+      "bytes": 23683,
+      "sha256": "f94e63b5d48c85fbeec88b15db161fce2c61c6576ca15127f1600ee663c2b0dd"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/execution_time",
+      "bytes": 39573,
+      "sha256": "be84b569c8096859778aacc9179db2a81b96fa719f90f7e058515e274f2b8404"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/j_array_params.txt",
+      "bytes": 6023,
+      "sha256": "8a5fbe51079daf2c4e206943c65aa3f8c880d62c2e8130f2af5af5c1bdca38f8"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/resource_usage/measurements.txt",
+      "bytes": 271,
+      "sha256": "761061b898ae36f99fb46cfc1183247ae94740eac0665f5796acb7cadd09f019"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/slurm_count_skipped.sh",
+      "bytes": 162,
+      "sha256": "0ac13e4d8d924a088968edabc768c30a91f7ab6ff9c6275710bc369a0bccf445"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/slurm_errors_inspect.sh",
+      "bytes": 367,
+      "sha256": "29d20415153833c29db8a4809bf43f28e9940e32db61edee6a10e273f3190835"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/slurm_execution_time.sh",
+      "bytes": 40,
+      "sha256": "f92c922bfd8d90347cf90512eee226e284719480916bc1b1ee195109182b6e5f"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/slurm_runs/.gitignore",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/how_to_compile.txt",
+      "bytes": 1637,
+      "sha256": "fb7b4244c30cf06ea98ae59b4ac6992f2fe26beceeb453134fc43e0299a20cc4"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA user guide.pdf",
+      "bytes": 1493585,
+      "sha256": "284d3c5493a0044e3cbcc9dd56cf3d66c4922e385f5c130a68d82a099add729a"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA.fig",
+      "bytes": 15186,
+      "sha256": "405ce9ecca97f3e4c23e9b339853022a65492a9f4320329edf611cbebb81a01b"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA.m",
+      "bytes": 35235,
+      "sha256": "8225c81444633b5a24d0341c175920a3ecfbc0be39ee897c864ad56044dc31a1"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_image_file_filter.mat",
+      "bytes": 355,
+      "sha256": "300a8ebccae8dc2e5ed7e7fd4db5d53cb1a9b51b748e67e0d7ea6875fd0b6893"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_prefs.mat",
+      "bytes": 1139,
+      "sha256": "867b4da874f2bcae281a30c4a239e3abf8c7d33ba6d15483dc21bc581b03d71d"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_setup.m",
+      "bytes": 1383,
+      "sha256": "ad38529c3e4202a89b9a1ad96c35b6ffd36f0ee548b83397de739b951d9f7fe5"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_tests/ARIA_generate_test_processor.m",
+      "bytes": 2312,
+      "sha256": "eaf65170ff34e5310459b093a5df37a0013567df3a1406d14f9007c3fe8ba9da"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_tests/ARIA_run_tests.m",
+      "bytes": 11351,
+      "sha256": "e0529a20501139e81b4d1c95769ddd06bc566726eb62b831720ea898e536f0c8"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_tests/ARIA_save_all_test_processors.m",
+      "bytes": 1263,
+      "sha256": "c084d88141fdcb7b62840d4287e0f494286b94e2c28083c9232d2b770d22332e"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_tests/compileMAT.sh",
+      "bytes": 247,
+      "sha256": "0367be1f2f1b0cf4c0926e4e2735bedc5e0b7b7ece9ad3addfa67f40a1cca87d"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_tests/DRIVE_get_segmentation_algorithm.m",
+      "bytes": 498,
+      "sha256": "e2b784bddf1e2afe9ed91fdf0a60fc9e3444d472d6a14993c2cdb31e142c4ec7"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_tests/DRIVE_measure_processing_time.m",
+      "bytes": 3659,
+      "sha256": "a018d5bd71c247321c40054ae1af0de0963d2582b4e443a2c9fe37f18f426f7f"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_tests/DRIVE_measure_segmentation_accuracy.m",
+      "bytes": 7397,
+      "sha256": "9cc04f26a975a8978cdeb79e75317b0d77d3fc97a32285217928086881edadd8"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_tests/DRIVE_save_segmented_images.m",
+      "bytes": 3131,
+      "sha256": "a281bfb9f4bf3aca77b4a27918a7c4a2d72493879b212f6a2f5ba3f433403cda"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_tests/get_vessel_database_directory.m",
+      "bytes": 2457,
+      "sha256": "00f20abe531597bf0ae58a03a8e081df7dadc190e26c4029ef077475b31c27c6"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_tests/IUWT_segmentation_for_testing.m",
+      "bytes": 2573,
+      "sha256": "cfde2249608b553b3e18e93c1f7fa4fa4110b326dd1928a884ebfd5feb54d574"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_tests/mediantau2curvesmooth.fig",
+      "bytes": 45532,
+      "sha256": "43ec4baf9fb818ef6ca1cb2a597725928ab28e7ba1718510e8e61911625782f4"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_tests/readme.txt",
+      "bytes": 3570,
+      "sha256": "65526e80dc350b927ccc13b2a51df8afe703045cdd1f9dcfa9e27bb8937ed013"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_tests/requiredMCRProducts.txt",
+      "bytes": 48,
+      "sha256": "396491e30fa8a7ce9df6aea6add81c0f356a97b920dd4e9df579f1bff2068350"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_tests/REVIEW_create_observer_vessel_list.m",
+      "bytes": 2681,
+      "sha256": "237fbe4cbec5372747713741c7abb4715a8d703732e4ca976b428d35783c301d"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_tests/REVIEW_create_results_table.m",
+      "bytes": 1653,
+      "sha256": "cc68dea4076cff1407abbcd0d5e17318ad3a2b2d23a4d55e50b2f0b07a9fc42f"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_tests/REVIEW_evaluate_diameter_measurements.m",
+      "bytes": 13895,
+      "sha256": "f9ea970e980436883315f683a00c6b42c84c7598011235cc4f4b370594f80e8c"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_tests/run_ARIA_run_tests.sh",
+      "bytes": 882,
+      "sha256": "e6db0b9582c2bca322bf38fb5cc497c26cec510d6015647d32537b028bc6a096"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_tests/write_table_to_command_window.m",
+      "bytes": 3301,
+      "sha256": "12084c4e29428245c397682991ff395c38598dc1a13e40cd9f9af5948b51cb29"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/ARIA_tests/write_table_to_file.m",
+      "bytes": 1968,
+      "sha256": "013311d6a157d9c4c42c1740d5087f1e2a5d6171e2b418bcb521a30a18077b6b"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Copyright.m",
+      "bytes": 1352,
+      "sha256": "485ccb3c932e9e10df686e172620bdc7539ffc5b8b4b310b6dd0c7818cf61080"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/database_directory_REVIEW.mat",
+      "bytes": 206,
+      "sha256": "d145fc1d1953d444083bb2cf9965550f80e0fe33c5e73a0f99413de62b852329"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/README.md",
+      "bytes": 3788,
+      "sha256": "ab240e799b15c9f273aaef6cec42eef4a59096f9cff9aae2791b4b7c59caeee6"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Algorithms/aria_algorithm_general.m",
+      "bytes": 2463,
+      "sha256": "8eac4944f6354c7f10fc201e07830518e313ecd61626d013bf920c6f018bec29"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Algorithms/compute_tortuosity.m",
+      "bytes": 7099,
+      "sha256": "c2a56826e0b7ecf5d3d4f2827838631dae83e1933249a42cf2c85c51ec8c3c4e"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Algorithms/exract_measurements.m",
+      "bytes": 17481,
+      "sha256": "146a13f84ca944ad2677bd9a704cba18592e86917a9e20d96bce84093c8d64f2"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Classes/RetinaVessel_Settings.m",
+      "bytes": 8360,
+      "sha256": "6e9f866c3c6eb2ee5524fc4254fd625eb6877753ac8a4238ef2d3e91be304379"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Classes/Vessel.m",
+      "bytes": 32508,
+      "sha256": "04a24c4dbbb00bea0a042253102c5950c5813981b44406426125401dd8545999"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Classes/Vessel_Data.m",
+      "bytes": 32517,
+      "sha256": "591a6a40db7de345bdb19042ff7bd2368f8e2d3a896f9958c3d56d5cb4992696"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Classes/Vessel_Data_IO.m",
+      "bytes": 19588,
+      "sha256": "09f78bf86853c8d02cd3421947509ce82d9044c818f80366f6c4ea1cb49e81dd"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_GUI/display_colours_dlg.m",
+      "bytes": 3704,
+      "sha256": "604d26477f25177fac0dd9ed8bc0451b3aceb40c709385e0aadf46a29e3c0487"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_GUI/set_view_spacing.m",
+      "bytes": 1219,
+      "sha256": "58fedbf32a651e445e2f517c382c94f71621501983adb275434fcdd1e9f09379"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_GUI/shadow_plot.m",
+      "bytes": 957,
+      "sha256": "c19b66784bd9d580d498a80e9bd8692e97aafba62fd1e2dc1b54170fd3659a52"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/centre_spline_fit.m",
+      "bytes": 5846,
+      "sha256": "110b046c14a6bde9576dea1d37325a956098990bac184f8ffe902295b414ecf3"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/clean_short_vessels.m",
+      "bytes": 1751,
+      "sha256": "2bfb837783ddfb7d75d1d86dc50e56ee60ea274cb1454b1d09c48d7a934540b4"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/edges_max_gradient.m",
+      "bytes": 4013,
+      "sha256": "c0670220c704188a2502d054952a0255048df19404a209c1642db125e4566f30"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/mask_choose.m",
+      "bytes": 5335,
+      "sha256": "1e6ef5eef13b80f1737379877bc1a1d36c9718cdc4e7ea1cd342bb9afa7a799c"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/optic_disc_mask.m",
+      "bytes": 6835,
+      "sha256": "7ff44bba096e01d30ecdb4b33b16f539821d0a66ff116d5b8b51dd27d7f7c80b"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/reduce_image_size.m",
+      "bytes": 3358,
+      "sha256": "1c3077bc0ba12c553f7ea84f765ccc0ece903fe9ececf2cece52c4b021801120"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/seg_iuwt.m",
+      "bytes": 4574,
+      "sha256": "e99d37ac9382a1f5b6e61e89f1650ac2197b0f17e0f00aa5a49c6c6cff936a9b"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Dialogs/dlg_clean_segmented.fig",
+      "bytes": 5842,
+      "sha256": "a5b625b2030043f1225453225f1005085217122b378fa22eb01ae7f90bed69e1"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Dialogs/dlg_clean_segmented.m",
+      "bytes": 4277,
+      "sha256": "16571b4cbd56f739b9caacdc561f3f55ef84229da8bd4e6892d51dfe73ce8816"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Dialogs/dlg_iuwt.fig",
+      "bytes": 8690,
+      "sha256": "5743ba9ba55dab19d65103c66aa0a9796d54638234bfb4ce8072bb5035eae3c2"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Dialogs/dlg_iuwt.m",
+      "bytes": 6705,
+      "sha256": "d33d2b91f37a2b2ee983979a409627c64fe96aaf28e32ecdf4d53a3475fa98ea"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Dialogs/dlg_mask_percent.fig",
+      "bytes": 336264,
+      "sha256": "188a3707ec5a9711d23699f2d28fd523376a6b2727d824ec76a72effb086bc89"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Dialogs/dlg_mask_percent.m",
+      "bytes": 6597,
+      "sha256": "5a76545be262ce9fd42b9180e1eacf00ccb92499772634a61df80111501c2c1d"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Dialogs/dlg_option_buttons.m",
+      "bytes": 2325,
+      "sha256": "e369bcf72457f0ae880fa46f87c23f6cd63f945ef14c4ab49849bc6f8e17bdff"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Utilities/binary_to_thinned_segments.m",
+      "bytes": 4588,
+      "sha256": "280b149a6ec3c454f075e48a62c3761fa166f6240d1f283f0213b01417e78788"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Utilities/clean_segmented_image.m",
+      "bytes": 1631,
+      "sha256": "62b33821b680cd8252ced387ab2f2ccd78ddb5aec9fb9d2123b5a21261c43e21"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Utilities/create_vessel_profile_masks.m",
+      "bytes": 4211,
+      "sha256": "41cae26a905ef929c33320229d37ce3ceba943693034bfc365a535e806b0394d"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Utilities/dist_inpainting.m",
+      "bytes": 1038,
+      "sha256": "867a2ab08f9100179251ad4e071aaca1075e0488430886f51f52d60e6d682ed8"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Utilities/iuwt_vessel_all.m",
+      "bytes": 2619,
+      "sha256": "1ce43b698fff5d42a7a643dd4307bd5d4720f4a53c26ee98361638e2b54f69ce"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Utilities/iuwt_vessels.m",
+      "bytes": 2044,
+      "sha256": "8f5328dd73639e5399d3853120eb101c22471f8618a230fe754f28c786e52076"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Utilities/make_image_profiles.m",
+      "bytes": 6140,
+      "sha256": "4e734c9d6acb887700e386902a32f240ffa00dfad27c3734bff34986003c181c"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Utilities/mask_threshold.m",
+      "bytes": 1760,
+      "sha256": "25109c5c6f978c43de7e1bf865f2e05fe100f89ffde74e372e5d3728f8fe93cf"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Utilities/mean_of_finite.m",
+      "bytes": 803,
+      "sha256": "145d01277ff3f7be87285f3c440bcde0136bfa851eca5ddbcb5bb6b6718b62f0"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Utilities/percentage_segment.m",
+      "bytes": 1815,
+      "sha256": "0f926da38b9d4f908232d57ba548c3c62ffe908998c6b32dc6521dc9f39fa0c8"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Utilities/percentage_threshold.m",
+      "bytes": 1346,
+      "sha256": "03d764db355d9bb3db1117ebe4ed58725545f4176a137c1255633a885ad44961"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Utilities/read_binary_image_from_file.m",
+      "bytes": 2126,
+      "sha256": "6dae279d0031d50c543c9383c75201a515a1b3bffbbf71878ffeedb26cd9d0f3"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Utilities/root_sum_of_squares.m",
+      "bytes": 603,
+      "sha256": "ada263a6bd27493a93eba17f5b40fe3a92f76de1b2f632731665cfd964463952"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Utilities/set_edges_2nd_derivative.m",
+      "bytes": 16718,
+      "sha256": "5d56533403e1185b96137bee18f3f0594bcfb82487c7e0f7b0469d95b557c459"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Utilities/spline_centreline.m",
+      "bytes": 8048,
+      "sha256": "3c529c1332a015801ae5de76636173084a8e747c0cd32e5294bfcc515c6c82ad"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Utilities/thinned_vessel_segments.m",
+      "bytes": 8737,
+      "sha256": "1d6d0db8d495957c2a2b758093bf049446dec8a5c9e21098fd8fa87732e7c7dd"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Library/Vessel_Library_Utilities/update_input_args.m",
+      "bytes": 1065,
+      "sha256": "fc5de721d178350e39177a8486f53c4398d20c822ba44acf9d2c96efbaf1e123"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/DRIVE.vessel_processor",
+      "bytes": 617,
+      "sha256": "4b8b7cb9127943e42303fbb519cfce2cc8bc5f90a5df22e2f24c09abb337e2f4"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/load_vessel_processor.m",
+      "bytes": 1006,
+      "sha256": "d6a4b93c93f50d1829a33bf0d78bd3910250df881b6f8f687ce6d8db9b22a71e"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/mattia_0.vessel_processor",
+      "bytes": 637,
+      "sha256": "66c89a18308247c8b7bb93de36f750658e24011d3f02801c8eb4fe7517aaba37"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/mattia_test_algorithm.vessel_processor",
+      "bytes": 639,
+      "sha256": "362cd72091fe4cb46921c2f77d0b20508f4e27c4beb84d838c92a39852cce6e7"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/REVIEW_CLRIS.vessel_processor",
+      "bytes": 604,
+      "sha256": "7a04df7795f46e80f3b0a3ab4ee44ce0d17304f5c73bb27bf30edc4624ae7445"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/REVIEW_HRIS.vessel_processor",
+      "bytes": 597,
+      "sha256": "cacedf7033e25509096bbb845d3eb6b58cea0c5d5065973f4654879f7f208ce1"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/REVIEW_HRIS_downsample.vessel_processor",
+      "bytes": 585,
+      "sha256": "eeae2c573ee2cc038cfbaf6650f725de226e684310a45a8f4565f3811ec58e61"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/REVIEW_KPIS.vessel_processor",
+      "bytes": 577,
+      "sha256": "8348f88c6282ac0354a28c83ff468dbdeb3272909527c76974a7777076e20860"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/REVIEW_VDIS.vessel_processor",
+      "bytes": 587,
+      "sha256": "b832ba5373d25b853195a7c916323f5ac86cd5ddc658bd84754883f34bf664ee"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/save_vessel_processor.m",
+      "bytes": 1658,
+      "sha256": "9b46b46bbefddce62d15aa237ff3cdca8cb09ccfd301c694e6e767829436378f"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/skipogh.vessel_processor",
+      "bytes": 237,
+      "sha256": "bcaf314b27d11dd55bd8d005102721d57f4873ff8b66ac81654474acdc61324e"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/skipogh001.vessel_processor",
+      "bytes": 609,
+      "sha256": "b49a997b22eca28f508d1fa2818928041a073462ea25d09bb7ddb447ea0c0372"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/skipogh002.vessel_processor",
+      "bytes": 237,
+      "sha256": "d089c06e5de1e4ff56a8b097cd70b378bb513549b9aa6b594938d2e3ab8e6309"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/skipogh003.vessel_processor",
+      "bytes": 237,
+      "sha256": "988cd32e72fc5f966997205f38a8834756885408d12b272a176cd0c5d577b405"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/skipogh004.vessel_processor",
+      "bytes": 237,
+      "sha256": "24e989df2e3730dcd144563d9b7c86a52fa868d7db700354ddd893b82f282d4a"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/skipogh005.vessel_processor",
+      "bytes": 237,
+      "sha256": "666f53ed354d883a58fdce387dcd56e3c0f3c5974c03d8090ee0ae0bcb4c4fb1"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/skipogh2.vessel_processor",
+      "bytes": 237,
+      "sha256": "8072b51ff2da04c904812d0879d2bcf59178ee9b8adb7cfb0ead990e1833eee8"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/skipogh3.vessel_processor",
+      "bytes": 634,
+      "sha256": "9d8f63cc2f717844ce54d2ba3257567c20b37a1179d07146a2ec98f8f583e5d2"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/skipogh_final.vessel_processor",
+      "bytes": 237,
+      "sha256": "ff7d2b3fda8a27376f5d16e28ef5236b36188e2f35cd32c98e03103db9384676"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/skipogh_final2.vessel_processor",
+      "bytes": 237,
+      "sha256": "b05939616696c25ddf4da6136043b07ae62e99e69a9ee52ee4811ed410a2bfcf"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/helpers/MeasureVessels/src/petebankhead-ARIA-328853d/Vessel_Processors/test_2vessel_320012_D.vessel_processor",
+      "bytes": 237,
+      "sha256": "dfd914ab55de92f86062ad1b44a4970dd01103c914286583064a3485924eea4e"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/IDVP.py",
+      "bytes": 48090,
+      "sha256": "e564340dd3d61ac66630991c862cdf2ab30fa0a20b563f21e8c5926f9921db64"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/measurePhenotype.py",
+      "bytes": 9069,
+      "sha256": "028779a6cd736658b80dec52da406a72192751164e2e94bd0df87c88c2bae658"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/measurePhenotype_ARIA.py",
+      "bytes": 40636,
+      "sha256": "b312f12ac9edf1a0276a4919f9655abc47641d50880fafe13acfe3108994925b"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/MeasureVessels.sh",
+      "bytes": 3107,
+      "sha256": "f00a89e252667c6d41719501640c10ff8f66f22170ebfc95e9fd6ca69674ff05"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/optic-nerve-cnn/LICENSE",
+      "bytes": 1076,
+      "sha256": "d43bc298da7a705e76eec104a64eb790969545fd039abe0629a1d4a89fe512c1"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/optic-nerve-cnn/models_weights/04.02.18_unet_on_ukbiobank_256px/last_checkpoint.hdf5",
+      "bytes": 5438920,
+      "sha256": "1e08dedaa237a956d880132cc8b164e1a7d11b6612c842fc94779b04dd245310"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/optic-nerve-cnn/pics/u_net_arch.png",
+      "bytes": 63060,
+      "sha256": "e9feb13936945488dc51af875b541a4ff86534da5e1d51dc143e027241d3beb3"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/optic-nerve-cnn/README.md",
+      "bytes": 2364,
+      "sha256": "23cb77b02ccecc8b3eedbc46369bfa3afbc094dd97d632dfd33a1018a76eaa49"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/optic-nerve-cnn/requirements.txt",
+      "bytes": 93,
+      "sha256": "fdaecbfc70042e52d5b0cdd8b05ae7ce951510f81811d1d9a51ebaef7c6293da"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/optic-nerve-cnn/scripts/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/optic-nerve-cnn/scripts/dual_IDG.py",
+      "bytes": 17401,
+      "sha256": "8dd38f168e4dbde2a93825a6073b03f722c1f41454691d4c469c78a739cb12a6"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/optic-nerve-cnn/scripts/extract_data.py",
+      "bytes": 15877,
+      "sha256": "bd2e87c4983df68b18df7d22e2d8e9b9fc9abb6cd9c73b2298a182ef2af4b86b"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/optic-nerve-cnn/scripts/imhandle.py",
+      "bytes": 6252,
+      "sha256": "05515fd56a51ebc17064e4ff5b0ebedcda25634e6eb6191cae652d01fdc04dcf"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/optic-nerve-cnn/scripts/TEST_organize_datasets.py",
+      "bytes": 3806,
+      "sha256": "60d29a57b8efd370681c96254c938be3b60580bdaa940770032194e8487eafa0"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/optic-nerve-cnn/scripts/TEST_unet_od_on_ukbiobank.py",
+      "bytes": 16985,
+      "sha256": "819820abe7c8b7be3974b7e18a4aae958befe2a72c7f77d5c9bfed91e053d4ae"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/predict_optic_disc.sh",
+      "bytes": 980,
+      "sha256": "d242968b3d55a4869895fcf760ee85b8759894500aefe2130183aacfdc35a71c"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/requirements_measurePhenotype.txt",
+      "bytes": 83,
+      "sha256": "ea05f1f8ab816ee078f733fcbae4b7cf4866d930848687403119a0f740d36a8b"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/run_ARIA_run_tests.sh",
+      "bytes": 882,
+      "sha256": "e6db0b9582c2bca322bf38fb5cc497c26cec510d6015647d32537b028bc6a096"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/run_measurePhenotype.sh",
+      "bytes": 1096,
+      "sha256": "a2d950b9fbeb82530ffa91b499144cc905dc1807f20d71ede8372ac1f866241e"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/preprocessing/run_pipeline.sh",
+      "bytes": 1135,
+      "sha256": "a33a2a883cca3a00a4ee59be022f36bb13af087480fa2e45ce8a61c03a5d1dc2"
+    },
+    {
+      "path": "retina_pipeline/retina-phenotypes/UPSTREAM_README.md",
+      "bytes": 5204,
+      "sha256": "e77e74461336d6007335ab4ca23d0ba9b674330ac784854415b57627c1a13e70"
+    }
+  ]
+}
