@@ -28,8 +28,8 @@ FIELD_SPECS = {
     "LVDdI_mm_m2": ("LVDd index", "mm/m²", 5, 80),
     "L2ParaFovea": ("Deep parafoveal VD", "device output", 0, 100),
     "L2PeriFovea": ("Deep perifoveal VD", "device output", 0, 100),
-    "VD": ("Retinal arterial VD", "0–1", 0, 1),
-    "Ratio": ("Artery/vein diameter ratio", "unitless", 0.01, 3),
+    "ratio_AV_DF": ("Artery/vein distance-factor ratio", "unitless", 0.1, 3),
+    "ratio_AV_medianDiameter": ("Artery/vein diameter ratio", "unitless", 0.01, 3),
 }
 
 BINARY_LABELS = {
@@ -330,7 +330,7 @@ class RetinaCADApp:
         status = self.pipeline.status()
         self.pipeline_title = tk.Label(
             inspector,
-            text="Automatic VD and Ratio",
+            text="Automatic DF ratio and diameter ratio",
             bg=COLORS["surface"],
             fg=COLORS["primary_text"] if status.available else COLORS["amber"],
             font=(FONT, TYPE["section"], "bold"),
@@ -355,7 +355,7 @@ class RetinaCADApp:
         self.pipeline_detail.grid(row=0, column=0, columnspan=2, sticky="new")
         self.pipeline_button = ttk.Button(
             actions,
-            text="Extract VD + Ratio",
+            text="Extract DF ratio + diameter ratio",
             style="Primary.TButton" if status.available else "Secondary.TButton",
             command=self._run_pipeline,
         )
@@ -441,12 +441,12 @@ class RetinaCADApp:
         row = self._section_heading(
             form, row, "Retinal phenotypes", badge="Automatic or manual"
         )
-        self._add_number_field(form, row, 0, "VD")
-        self._add_number_field(form, row, 1, "Ratio")
+        self._add_number_field(form, row, 0, "ratio_AV_DF")
+        self._add_number_field(form, row, 1, "ratio_AV_medianDiameter")
         row += 1
         tk.Label(
             form,
-            text="VD maps to VD_orig_artery. Ratio maps to ratio_AV_medianDiameter.",
+            text="DF ratio = DF_artery / DF_vein; diameter ratio = artery / vein.",
             bg=COLORS["surface"],
             fg=COLORS["muted"],
             font=(FONT, TYPE["support"]),
@@ -562,7 +562,7 @@ class RetinaCADApp:
         ).grid(row=0, column=0, sticky="ew", padx=34, pady=(20, 4))
         tk.Label(
             details,
-            text="Locked A3 Ridge model",
+            text="Fixed A3 TabPFN model",
             bg=COLORS["surface"],
             fg=COLORS["muted"],
             font=(FONT, TYPE["support"]),
@@ -572,8 +572,8 @@ class RetinaCADApp:
             row=2, column=0, sticky="ew", padx=34, pady=12
         )
         self.result_case_label = self._result_detail_row(details, 3, "Case", "Not specified")
-        self.result_vd_label = self._result_detail_row(details, 4, "VD", "--")
-        self.result_ratio_label = self._result_detail_row(details, 5, "Ratio", "--")
+        self.result_df_ratio_label = self._result_detail_row(details, 4, "Distance-factor ratio", "--")
+        self.result_ratio_label = self._result_detail_row(details, 5, "Diameter ratio", "--")
         self.result_source_label = self._result_detail_row(details, 6, "Phenotypes", "--")
         details.grid_rowconfigure(7, weight=1)
         tk.Label(
@@ -720,7 +720,7 @@ class RetinaCADApp:
             )
 
     def _on_case_changed(self, field: str | None) -> None:
-        if field in {"VD", "Ratio"} and not self._applying_pipeline_result:
+        if field in {"ratio_AV_DF", "ratio_AV_medianDiameter"} and not self._applying_pipeline_result:
             self.phenotype_source = "manual"
         if self._tracking_ready:
             self._invalidate_result()
@@ -733,7 +733,7 @@ class RetinaCADApp:
         self.probability_label.configure(text="--", fg=COLORS["ink"])
         self.result_state.configure(text="Inputs changed - recalculate", fg=COLORS["amber"])
         self.result_case_label.configure(text="Not calculated")
-        self.result_vd_label.configure(text="--")
+        self.result_df_ratio_label.configure(text="--")
         self.result_ratio_label.configure(text="--")
         self.result_source_label.configure(text="--")
         self.export_button.configure(state="disabled")
@@ -844,8 +844,8 @@ class RetinaCADApp:
         if self.phenotype_source == "automatic":
             self._applying_pipeline_result = True
             try:
-                self.number_vars["VD"].set("")
-                self.number_vars["Ratio"].set("")
+                self.number_vars["ratio_AV_DF"].set("")
+                self.number_vars["ratio_AV_medianDiameter"].set("")
             finally:
                 self._applying_pipeline_result = False
             self.phenotype_source = "manual"
@@ -919,7 +919,7 @@ class RetinaCADApp:
         if image_token != self._image_identity(self.image_path):
             self._active_extraction_token = None
             self.choose_image_button.configure(state="normal")
-            self.pipeline_button.configure(text="Extract VD + Ratio", state="normal")
+            self.pipeline_button.configure(text="Extract DF ratio + diameter ratio", state="normal")
             self.pipeline_title.configure(text="Image changed", fg=COLORS["amber"])
             self.pipeline_detail.configure(
                 text="The extraction result was discarded. Run it again for the current image."
@@ -929,16 +929,16 @@ class RetinaCADApp:
         self.choose_image_button.configure(state="normal")
         self._applying_pipeline_result = True
         try:
-            self.number_vars["VD"].set(f"{result.vd:.12g}")
-            self.number_vars["Ratio"].set(f"{result.ratio:.12g}")
+            self.number_vars["ratio_AV_DF"].set(f"{result.df_ratio:.12g}")
+            self.number_vars["ratio_AV_medianDiameter"].set(f"{result.ratio:.12g}")
         finally:
             self._applying_pipeline_result = False
         self.phenotype_source = "automatic"
         self.pipeline_button.configure(text="Phenotypes extracted", state="normal")
-        self.pipeline_title.configure(text="VD and Ratio ready", fg=COLORS["success"])
+        self.pipeline_title.configure(text="DF ratio and diameter ratio ready", fg=COLORS["success"])
         self.pipeline_detail.configure(text="The extracted values are available in Study inputs.")
         self.action_status.configure(
-            text="VD and Ratio are ready. Complete the remaining inputs.", fg=COLORS["success"]
+            text="DF ratio and diameter ratio are ready. Complete the remaining inputs.", fg=COLORS["success"]
         )
         self._show_page("inputs")
 
@@ -947,7 +947,7 @@ class RetinaCADApp:
             return
         self._active_extraction_token = None
         self.choose_image_button.configure(state="normal")
-        self.pipeline_button.configure(text="Extract VD + Ratio", state="normal")
+        self.pipeline_button.configure(text="Extract DF ratio + diameter ratio", state="normal")
         self.pipeline_title.configure(text="Extraction failed", fg=COLORS["danger"])
         self.pipeline_detail.configure(text="Review the error and try again.")
         messagebox.showerror("Extraction failed", detail, parent=self.root)
@@ -1028,8 +1028,8 @@ class RetinaCADApp:
         self.probability_label.configure(text=f"{percent:.1f}%", fg=COLORS["primary_text"])
         self.result_state.configure(text=f"Phenotypes: {source}", fg=COLORS["success"])
         self.result_case_label.configure(text=self.last_snapshot.case_code or "Not specified")
-        self.result_vd_label.configure(text=f"{result.values['VD']:g}")
-        self.result_ratio_label.configure(text=f"{result.values['Ratio']:g}")
+        self.result_df_ratio_label.configure(text=f"{result.values['ratio_AV_DF']:g}")
+        self.result_ratio_label.configure(text=f"{result.values['ratio_AV_medianDiameter']:g}")
         self.result_source_label.configure(text=source)
         self.export_button.configure(state="normal")
         self.action_status.configure(
@@ -1092,15 +1092,15 @@ class RetinaCADApp:
         self.qc_badge.grid(row=0, column=1, sticky="e")
         status = self.pipeline.status()
         self.pipeline_title.configure(
-            text="Automatic VD and Ratio",
+            text="Automatic DF ratio and diameter ratio",
             fg=COLORS["primary_text"] if status.available else COLORS["amber"],
         )
         self.pipeline_detail.configure(text=status.detail)
-        self.pipeline_button.configure(text="Extract VD + Ratio", state="normal")
+        self.pipeline_button.configure(text="Extract DF ratio + diameter ratio", state="normal")
         self.probability_label.configure(text="--", fg=COLORS["ink"])
         self.result_state.configure(text="No calculation yet", fg=COLORS["muted"])
         self.result_case_label.configure(text="Not specified")
-        self.result_vd_label.configure(text="--")
+        self.result_df_ratio_label.configure(text="--")
         self.result_ratio_label.configure(text="--")
         self.result_source_label.configure(text="--")
         self.export_button.configure(state="disabled")
@@ -1122,14 +1122,14 @@ class RetinaCADApp:
         body.pack(fill="both", expand=True, padx=18, pady=18)
         tk.Label(
             body,
-            text="Locked A3 Ridge model",
+            text="Fixed A3 TabPFN model",
             bg=COLORS["surface"],
             fg=COLORS["ink"],
             font=(FONT, 18, "bold"),
         ).pack(anchor="w")
         tk.Label(
             body,
-            text=f"Internal repeated nested-CV AUC (median): {self.model.internal_auc:.3f}",
+            text=f"Internal cross-validation AUC (median): {self.model.internal_auc:.3f}",
             bg=COLORS["surface"],
             fg=COLORS["muted"],
             font=(FONT, TYPE["support"]),
@@ -1166,8 +1166,8 @@ class RetinaCADApp:
             "LVDdI_mm_m2": 28,
             "L2ParaFovea": 53,
             "L2PeriFovea": 49,
-            "VD": 0.037,
-            "Ratio": 1.09,
+            "ratio_AV_DF": 1.0,
+            "ratio_AV_medianDiameter": 1.09,
         }
         self.case_code_var.set("DEMO-001")
         for key, value in demo.items():
@@ -1187,7 +1187,13 @@ def run(
 ) -> None:
     """Start the application and optionally capture a verification screenshot."""
     root = tk.Tk()
-    app = RetinaCADApp(root, load_demo=load_demo)
+    try:
+        app = RetinaCADApp(root, load_demo=load_demo)
+    except (FileNotFoundError, ValueError, RuntimeError) as exc:
+        root.withdraw()
+        messagebox.showerror("RetinaCAD model setup", str(exc), parent=root)
+        root.destroy()
+        return
     if geometry:
         root.geometry(geometry)
     if initial_page:

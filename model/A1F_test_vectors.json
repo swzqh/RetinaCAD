@@ -1,0 +1,172 @@
+[
+  {
+    "case_id": "SYNTHETIC_01",
+    "inputs": {
+      "Age": 45.0,
+      "Male": 1.0,
+      "HTN": 0.0,
+      "DM": 1.0,
+      "Smoke": 0.0,
+      "LVEF_pct": 68.0,
+      "LVMI_g_m2": 91.4332131518045,
+      "RWT": 0.37617924528301894,
+      "LVDdI_mm_m2": 28.186266938423316,
+      "ratio_AV_medianDiameter": 0.8419318,
+      "ratio_AV_DF": 0.9908469
+    },
+    "expected_probability": 0.685478925704956
+  },
+  {
+    "case_id": "SYNTHETIC_02",
+    "inputs": {
+      "Age": 49.0,
+      "Male": 0.0,
+      "HTN": 1.0,
+      "DM": 0.0,
+      "Smoke": 1.0,
+      "LVEF_pct": 68.0,
+      "LVMI_g_m2": 91.4332131518045,
+      "RWT": 0.37617924528301894,
+      "LVDdI_mm_m2": 28.186266938423316,
+      "ratio_AV_medianDiameter": 0.9058044399999999,
+      "ratio_AV_DF": 0.9929844000000001
+    },
+    "expected_probability": 0.6712949872016907
+  },
+  {
+    "case_id": "SYNTHETIC_03",
+    "inputs": {
+      "Age": 53.0,
+      "Male": 1.0,
+      "HTN": 0.0,
+      "DM": 1.0,
+      "Smoke": 0.0,
+      "LVEF_pct": 68.0,
+      "LVMI_g_m2": 91.4332131518045,
+      "RWT": 0.37617924528301894,
+      "LVDdI_mm_m2": 28.186266938423316,
+      "ratio_AV_medianDiameter": 0.9733875,
+      "ratio_AV_DF": 0.99377684
+    },
+    "expected_probability": 0.7406132221221924
+  },
+  {
+    "case_id": "SYNTHETIC_04",
+    "inputs": {
+      "Age": 57.0,
+      "Male": 0.0,
+      "HTN": 1.0,
+      "DM": 0.0,
+      "Smoke": 1.0,
+      "LVEF_pct": 68.0,
+      "LVMI_g_m2": 91.4332131518045,
+      "RWT": 0.37617924528301894,
+      "LVDdI_mm_m2": 28.186266938423316,
+      "ratio_AV_medianDiameter": 1.01559878,
+      "ratio_AV_DF": 0.99492166
+    },
+    "expected_probability": 0.6966167688369751
+  },
+  {
+    "case_id": "SYNTHETIC_05",
+    "inputs": {
+      "Age": 61.0,
+      "Male": 1.0,
+      "HTN": 0.0,
+      "DM": 1.0,
+      "Smoke": 0.0,
+      "LVEF_pct": 68.0,
+      "LVMI_g_m2": 91.4332131518045,
+      "RWT": 0.37617924528301894,
+      "LVDdI_mm_m2": 28.186266938423316,
+      "ratio_AV_medianDiameter": 1.06593446,
+      "ratio_AV_DF": 0.99591452
+    },
+    "expected_probability": 0.7076363563537598
+  },
+  {
+    "case_id": "SYNTHETIC_06",
+    "inputs": {
+      "Age": 65.0,
+      "Male": 0.0,
+      "HTN": 1.0,
+      "DM": 0.0,
+      "Smoke": 1.0,
+      "LVEF_pct": 68.0,
+      "LVMI_g_m2": 91.4332131518045,
+      "RWT": 0.37617924528301894,
+      "LVDdI_mm_m2": 28.186266938423316,
+      "ratio_AV_medianDiameter": 1.1028755000000001,
+      "ratio_AV_DF": 0.9968645
+    },
+    "expected_probability": 0.7094966769218445
+  },
+  {
+    "case_id": "SYNTHETIC_07",
+    "inputs": {
+      "Age": 69.0,
+      "Male": 1.0,
+      "HTN": 0.0,
+      "DM": 1.0,
+      "Smoke": 0.0,
+      "LVEF_pct": 68.0,
+      "LVMI_g_m2": 91.4332131518045,
+      "RWT": 0.37617924528301894,
+      "LVDdI_mm_m2": 28.186266938423316,
+      "ratio_AV_medianDiameter": 1.1315206199999999,
+      "ratio_AV_DF": 0.9975963
+    },
+    "expected_probability": 0.6931648850440979
+  },
+  {
+    "case_id": "SYNTHETIC_08",
+    "inputs": {
+      "Age": 73.0,
+      "Male": 0.0,
+      "HTN": 1.0,
+      "DM": 0.0,
+      "Smoke": 1.0,
+      "LVEF_pct": 68.0,
+      "LVMI_g_m2": 91.4332131518045,
+      "RWT": 0.37617924528301894,
+      "LVDdI_mm_m2": 28.186266938423316,
+      "ratio_AV_medianDiameter": 1.1619822,
+      "ratio_AV_DF": 0.99821274
+    },
+    "expected_probability": 0.7370994687080383
+  },
+  {
+    "case_id": "SYNTHETIC_09",
+    "inputs": {
+      "Age": 77.0,
+      "Male": 1.0,
+      "HTN": 0.0,
+      "DM": 1.0,
+      "Smoke": 0.0,
+      "LVEF_pct": 68.0,
+      "LVMI_g_m2": 91.4332131518045,
+      "RWT": 0.37617924528301894,
+      "LVDdI_mm_m2": 28.186266938423316,
+      "ratio_AV_medianDiameter": 1.2288593,
+      "ratio_AV_DF": 0.9993617800000001
+    },
+    "expected_probability": 0.7431029677391052
+  },
+  {
+    "case_id": "SYNTHETIC_10",
+    "inputs": {
+      "Age": 81.0,
+      "Male": 0.0,
+      "HTN": 1.0,
+      "DM": 0.0,
+      "Smoke": 1.0,
+      "LVEF_pct": 68.0,
+      "LVMI_g_m2": 91.4332131518045,
+      "RWT": 0.37617924528301894,
+      "LVDdI_mm_m2": 28.186266938423316,
+      "ratio_AV_medianDiameter": 1.26259682,
+      "ratio_AV_DF": 1.00036906
+    },
+    "expected_probability": 0.8215277194976807
+  }
+]

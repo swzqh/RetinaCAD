@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
@@ -29,4 +30,4 @@ def resource_path(relative: str | Path) -> Path:
 
 def model_path() -> Path:
     """Return the locked A3 model JSON path."""
-    return resource_path("model/A3_locked_model.json")
+    return Path(os.environ["RETINACAD_MODEL_MANIFEST"]) if os.environ.get("RETINACAD_MODEL_MANIFEST") else resource_path("model/A3_TabPFN_manifest.json")

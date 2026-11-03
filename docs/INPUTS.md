@@ -1,6 +1,6 @@
 # Input definitions
 
-The fixed A3 model requires all 13 keys. Measurements must follow the study definitions.
+The fixed A3 model uses these 13 keys in the manifest's order.
 
 | Key | Measurement | Unit or coding |
 | --- | --- | --- |
@@ -8,20 +8,20 @@ The fixed A3 model requires all 13 keys. Measurements must follow the study defi
 | `Male` | Male sex | 0=female; 1=male |
 | `HTN` | Hypertension | 0=no; 1=yes |
 | `DM` | Diabetes mellitus | 0=no; 1=yes |
-| `Smoke` | Smoking | 0=no; 1=yes, as recorded |
+| `Smoke` | Smoking | 0=no; 1=yes, using the study definition |
 | `LVEF_pct` | Left ventricular ejection fraction | % |
-| `LVMI_g_m2` | Left ventricular mass index | g/m^2 |
+| `LVMI_g_m2` | Left ventricular mass index | g/m² |
 | `RWT` | Relative wall thickness | unitless |
-| `LVDdI_mm_m2` | Indexed LV end-diastolic diameter | mm/m^2 |
-| `L2ParaFovea` | Deep-layer parafoveal vessel density | device output |
-| `L2PeriFovea` | Deep-layer perifoveal vessel density | device output |
-| `VD` | Retinal arterial vessel density | pipeline output |
-| `Ratio` | Artery-to-vein median diameter ratio | unitless |
+| `LVDdI_mm_m2` | Indexed LV end-diastolic diameter | mm/m² |
+| `L2ParaFovea` | Deep parafoveal vessel density | original device-output scale |
+| `L2PeriFovea` | Deep perifoveal vessel density | original device-output scale |
+| `ratio_AV_medianDiameter` | Median arterial diameter divided by median venous diameter | unitless |
+| `ratio_AV_DF` | Median arterial distance factor divided by median venous distance factor | unitless |
 
-`VD` is a fraction on the 0–1 scale. Do not enter it as a percentage. The OCTA annular measures retain the device-output scale used in the development cohort; do not divide them by 100.
+Distance factor is vessel path length divided by chord length. `ratio_AV_DF` describes relative arterial and venous tortuosity, not fractal dimension. The retired `VD` arterial-density key cannot substitute for it. Use the explicit diameter-ratio key instead of the retired `Ratio` alias.
 
-L2 denotes the deep retinal vascular layer. The parafoveal and perifoveal measurements refer to the 1–3-mm and 3–6-mm annuli, respectively. `Ratio` is the artery-to-vein median diameter ratio, rather than the equivalent central retinal artery-to-vein caliber ratio.
+OCTA values retain the device-output percentage scale; do not divide by 100. L2 is the device-defined deep vascular complex. Parafoveal and perifoveal annuli have diameters of 1–3 mm and 3–6 mm, respectively.
 
-Binary definitions, including smoking, must match the manuscript. The desktop interface requires complete inputs. The reference implementation accepts explicit missing values and fills them with stored development-cohort medians; this does not make unavailable or incorrectly defined measurements interchangeable.
+All keys must be present. The inference service permits explicit missing values only for `LVMI_g_m2` and `RWT`, handled by the fitted TabPFN preprocessing. The desktop interface requests complete measurements.
 
-CAD is defined in the model as fixed stenosis of at least 20% in a major epicardial coronary artery or branch. The output is a cross-sectional probability under that definition.
+The outcome is study-defined coronary disease at assessment: at least 20% fixed luminal stenosis in a major epicardial coronary artery or evaluable branch. It is not a future-event risk estimate.

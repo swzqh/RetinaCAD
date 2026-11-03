@@ -20,3 +20,7 @@ The source application uses Python, Tcl/Tk, and Pillow. The optional Windows bui
 ## RetinaCAD
 
 No project-wide license has been assigned in this package. The original rights holders retain their rights. A software license for RetinaCAD should be selected by its rights holders before granting general reuse or redistribution permissions.
+
+## TabPFN
+
+TabPFN software and foundation checkpoints are obtained from [PriorLabs/TabPFN](https://github.com/PriorLabs/TabPFN) and [Prior-Labs/TabPFN-v2-clf](https://huggingface.co/Prior-Labs/TabPFN-v2-clf) under their upstream terms. Foundation weights and private fitted training context are not redistributed in this repository.

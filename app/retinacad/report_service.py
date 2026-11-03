@@ -23,8 +23,8 @@ FIELD_LABELS = {
     "LVDdI_mm_m2": ("Indexed LV end-diastolic diameter", "mm/m²"),
     "L2ParaFovea": ("Deep parafoveal vessel density", "device output"),
     "L2PeriFovea": ("Deep perifoveal vessel density", "device output"),
-    "VD": ("Retinal arterial vessel density", "pipeline output"),
-    "Ratio": ("Artery-to-vein median diameter ratio", "unitless"),
+    "ratio_AV_DF": ("Artery-to-vein tortuosity distance-factor ratio", "pipeline output"),
+    "ratio_AV_medianDiameter": ("Artery-to-vein median diameter ratio", "unitless"),
 }
 
 
@@ -51,6 +51,8 @@ def export_report(
         "case_code": case_code or None,
         "image_filename": image_name,
         "model_id": result.model_id,
+        "input_status": "USER_SUPPLIED_MEASUREMENTS",
+        "clinical_validity_established": False,
         "outcome_definition": result.outcome_definition,
         "probability": result.probability,
         "linear_predictor": result.linear_predictor,
@@ -58,7 +60,7 @@ def export_report(
         "imputed_fields": list(result.imputed_fields),
         "image_qc": dict(image_qc) if image_qc else None,
         "phenotype_source": phenotype_source,
-        "notice": "For research reference only. This tool does not replace coronary angiography, clinical judgment, or future-event risk assessment.",
+        "notice": "For research reference only. Independent clinical validation is required before clinical use. This tool does not replace coronary angiography, clinical judgment, or future-event risk assessment.",
     }
     json_path.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
@@ -67,7 +69,7 @@ def export_report(
     rows = []
     for key, value in result.values.items():
         label, unit = FIELD_LABELS[key]
-        display = f"{value:g}"
+        display = "Missing" if value is None else f"{value:g}"
         rows.append(
             "<tr>"
             f"<td>{html.escape(label)}</td>"
@@ -109,11 +111,11 @@ footer {{ padding: 14px 32px; border-top: 1px solid #dadadd; color: #6e6e73; fon
 <body><div class="page">
 <header><h1>Retinal–Coronary Reference Assessment</h1><p>RetinaCAD · Local research tool</p></header>
 <main>
-<div class="result"><div><div style="color:#6e6e73;font-size:13px">CAD reference probability</div><div class="probability">{result.probability * 100:.1f}%</div></div>
+<div class="result"><div><div style="color:#6e6e73;font-size:13px">Research model probability</div><div class="probability">{result.probability * 100:.1f}%</div></div>
 <div class="meta">Case code: {html.escape(case_code or 'Not provided')}<br>Image: {html.escape(image_name or 'Not loaded')}<br>Phenotypes: {html.escape(phenotype_source or 'Not recorded')}<br>{datetime.now().strftime('%Y-%m-%d %H:%M')}</div></div>
 <h2>Model inputs</h2><table><thead><tr><th>Variable</th><th>Value</th><th>Unit / coding</th></tr></thead><tbody>{''.join(rows)}</tbody></table>
 {f'<h2>Image technical check</h2><table><tbody>{qc_rows}</tbody></table>' if qc_rows else ''}
-<div class="notice">For research reference only. This tool does not replace coronary angiography, clinical judgment, or future-event risk assessment.</div>
+<div class="notice">For research reference only. Independent clinical validation is required before clinical use. This tool does not replace coronary angiography, clinical judgment, or future-event risk assessment.</div>
 </main><footer>Model: {html.escape(result.model_id)} · Results apply only to the study definition and data range</footer>
 </div></body></html>"""
     html_path.write_text(report_html, encoding="utf-8")

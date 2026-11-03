@@ -2,6 +2,11 @@
 setlocal
 set "APP_DIR=%~dp0"
 
+if exist "%APP_DIR%..\.venv\Scripts\pythonw.exe" (
+  start "RetinaCAD" "%APP_DIR%..\.venv\Scripts\pythonw.exe" "%APP_DIR%run_app.pyw"
+  exit /b 0
+)
+
 where pythonw.exe >nul 2>nul
 if %errorlevel%==0 (
   start "RetinaCAD" pythonw.exe "%APP_DIR%run_app.pyw"

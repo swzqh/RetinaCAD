@@ -48,3 +48,11 @@ logs/
 .idea/
 Thumbs.db
 .DS_Store
+
+# Private TabPFN training context and foundation checkpoints
+*.tabpfn_fit
+*.ckpt
+*.joblib
+*.pkl
+*.pickle
+model/private_*

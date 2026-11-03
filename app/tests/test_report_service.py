@@ -5,7 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from retinacad.model_service import LockedA3Model
+from helpers import SyntheticModel
 from retinacad.report_service import export_report
 
 
@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 class ReportServiceTests(unittest.TestCase):
     def test_exports_matching_html_and_json(self) -> None:
-        model = LockedA3Model(ROOT / "model" / "A3_locked_model.json")
+        model = SyntheticModel()
         vectors = json.loads(
             (ROOT / "model" / "A3_test_vectors.json").read_text(encoding="utf-8")
         )

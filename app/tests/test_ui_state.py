@@ -6,6 +6,7 @@ from unittest.mock import patch
 
 from retinacad.pipeline_service import PipelineResult, PipelineStatus
 from retinacad.ui_workbench import RetinaCADApp
+from helpers import SyntheticModel
 
 
 class UIStateTests(unittest.TestCase):
@@ -15,6 +16,8 @@ class UIStateTests(unittest.TestCase):
             return_value=PipelineStatus(True, "Ready", "Local engine ready."),
         )
         self.status_patch.start()
+        self.model_patch = patch("retinacad.ui_workbench.LockedA3Model", SyntheticModel)
+        self.model_patch.start()
         self.root = tk.Tk()
         self.root.withdraw()
         self.app = RetinaCADApp(self.root)
@@ -23,6 +26,7 @@ class UIStateTests(unittest.TestCase):
     def tearDown(self) -> None:
         self.root.destroy()
         self.status_patch.stop()
+        self.model_patch.stop()
 
     def test_input_change_invalidates_calculated_result(self) -> None:
         self.assertIsNotNone(self.app.last_snapshot)
@@ -39,15 +43,15 @@ class UIStateTests(unittest.TestCase):
         token = ("stale-image", 100, 123456)
         self.app._active_extraction_token = token
         before = (
-            self.app.number_vars["VD"].get(),
-            self.app.number_vars["Ratio"].get(),
+            self.app.number_vars["ratio_AV_DF"].get(),
+            self.app.number_vars["ratio_AV_medianDiameter"].get(),
         )
 
-        self.app._pipeline_completed(PipelineResult(vd=0.05, ratio=1.2), token)
+        self.app._pipeline_completed(PipelineResult(df_ratio=1.0, ratio=1.2), token)
 
         after = (
-            self.app.number_vars["VD"].get(),
-            self.app.number_vars["Ratio"].get(),
+            self.app.number_vars["ratio_AV_DF"].get(),
+            self.app.number_vars["ratio_AV_medianDiameter"].get(),
         )
         self.assertEqual(after, before)
         self.assertIsNone(self.app._active_extraction_token)

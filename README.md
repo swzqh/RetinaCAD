@@ -1,83 +1,47 @@
 # RetinaCAD
 
-RetinaCAD is a local desktop research application for the fixed A3 ridge logistic regression model described in **Retinal Vascular Phenotypes in Coronary Artery Disease: A Genetic and Multimodal Imaging Study**. It combines clinical, echocardiographic, and retinal measurements to estimate the probability of angiographic coronary artery disease (CAD) under the study definition.
+RetinaCAD is a local desktop research application for assessing angiographic coronary atherosclerosis using clinical, resting echocardiographic, and retinal measurements. Its fixed A3 TabPFN model uses 13 predictors, including artery-to-vein median diameter and distance factor ratios and deep parafoveal and perifoveal vessel density.
 
-The application uses stored coefficients, scaling parameters, and missing-value fills. It does not select predictors or refit the model. The output concerns CAD status at assessment, rather than future cardiovascular events. Prospective external validation is required before clinical use.
+The application accompanies **Retinal vascular morphology and deep macular perfusion in coronary atherosclerosis: genetic associations and clinical imaging**. The model was developed in 150 participants, including 104 with study-defined coronary disease. Its median AUC across 20 repetitions of stratified fivefold cross-validation was 0.801. Independent clinical validation is required before clinical use.
 
-## Repository contents
+**Prediction requires approved model files.** Source code, model manifests, and synthetic test cases are public. TabPFN fit states retain participant-level training context and may be requested from the corresponding author, Yuqing Lan, at **lanyq@mail.sysu.edu.cn**, subject to ethical and institutional restrictions. Patient records, patient images, fit states, and foundation checkpoints are not included here.
 
-| Path | Contents |
-| --- | --- |
-| `app/retinacad/` | Desktop interface, model inference, image checks, local pipeline adapter, and report export |
-| `app/tests/` | Model, input validation, report, image, pipeline adapter, and interface tests |
-| `app/assets/` | Application icons |
-| `app/wsl_engine/` | Setup and extraction scripts for the optional local image-processing engine |
-| `model/` | Fixed A3 model, reference implementation, and 10 synthetic test vectors |
-| `docs/` | Input definitions and external pipeline setup |
-| `retina_pipeline/` | Instructions for installing external image-processing components |
-| `licenses/` | Third-party notices and license texts |
+## Install and run
 
-Patient records, patient images, analysis outputs, development logs, compiled executables, and third-party pipeline source or weights are not included. The test vectors are synthetic.
-
-## Run from source
-
-Use Python 3.11 or later with Tk support. Windows 10/11 is the target platform. The desktop application requires Pillow; the reference model calculation uses only the Python standard library.
-
-From the repository root, run in PowerShell:
+Use Python 3.11 or 3.12 with Tk support. From the repository root in PowerShell:
 
 ```powershell
 python -m venv .venv
 .venv\Scripts\python.exe -m pip install -r app/requirements.txt
+```
+
+After obtaining the approved `A3.tabpfn_fit`, keep it in a private folder outside this repository. Obtain `tabpfn-v2-classifier-finetuned-zk73skhh.ckpt` from the [pinned upstream source](https://huggingface.co/Prior-Labs/TabPFN-v2-clf/tree/275f19d2add9c2c0de38f9ebaded3856599fa2e7) under its applicable terms. Configure both locations:
+
+```powershell
+$env:RETINACAD_MODEL_DIR = "C:\RetinaCAD-private"
+$env:RETINACAD_CHECKPOINT = "C:\RetinaCAD-private\tabpfn-v2-classifier-finetuned-zk73skhh.ckpt"
 .venv\Scripts\python.exe app/run_app.py
 ```
 
-To open a synthetic demonstration:
+The loader checks both SHA-256 hashes against the public manifest. It performs inference without refitting, selecting predictors, or downloading models. A temporary local copy relocates the checkpoint path recorded in the fit state; fitted arrays remain unchanged. Set `RETINACAD_DEVICE` to `cpu` or `cuda` to choose a device explicitly.
+
+Add `--demo` to load synthetic demonstration inputs. This also requires the approved model files and does not substitute for the fitted model.
+
+## Use
+
+1. Optionally select a fundus image in **Image review**.
+2. Enter clinical, echocardiographic, OCTA, and fundus measurements in **Study inputs**.
+3. Calculate the probability in **Result** and export matching HTML and JSON reports.
+
+Changing inputs or selecting another image clears the previous result before export. Reports record the model identifier, measurements, missing fields, and available image provenance. Inference and image processing run locally and do not upload images or measurements.
+
+See [Input definitions](docs/INPUTS.md) for units and coding. The distance factor ratio describes relative arterial and venous tortuosity; it is not arterial vessel density or a fractal-dimension ratio.
+
+## Verify
+
+The unit tests cover input validation, image checks, pipeline parsing, report export, and interface state without private model files:
 
 ```powershell
-.venv\Scripts\python.exe app/run_app.py --demo
-```
-
-Manual entry of verified retinal measurements works without WSL or the external image-processing components.
-
-## Workflow
-
-1. Enter a case code and, if needed, select a fundus image in **Image review**.
-2. Enter the clinical, echocardiographic, and retinal measurements in **Study inputs**. The two fundus measurements may be entered manually or obtained using a configured local extraction engine.
-3. Calculate the probability in **Result** and export the HTML and JSON report.
-
-Changing an input or selecting another image clears the previous result. A new calculation is required before export. Reports record the model identifier, inputs, imputed fields, and available image and phenotype provenance. Image checks describe technical properties and do not establish clinical image suitability.
-
-All calculations and image processing run locally. Dependency installation requires internet access; normal use does not upload images or model inputs.
-
-## Model and inputs
-
-The authoritative model is `model/A3_locked_model.json`, with model identifier `A3_RIDGE_LAMBDA_MIN_LOCKED_20260817` and ridge penalty 0.1. It contains 13 predictors: five clinical, four echocardiographic, two deep macular OCTA, and two fundus-derived measurements. See [Input definitions](docs/INPUTS.md) for names, units, and coding.
-
-The development cohort included 150 participants, of whom 104 had CAD. The median AUC from repeated nested cross-validation was 0.804. This is an internal validation estimate. The final model fitted to the full development cohort is supplied for independent evaluation.
-
-The reference implementation can be used without the desktop interface:
-
-```python
-import json
-import sys
-from pathlib import Path
-
-sys.path.insert(0, str(Path("model").resolve()))
-from a3_predict import predict_a3
-
-vectors = json.loads(Path("model/A3_test_vectors.json").read_text(encoding="utf-8"))
-probability = predict_a3(vectors[0]["inputs"])
-print(probability)  # 0.22545899869472588
-```
-
-All 13 keys must be present. Unknown keys, nonnumeric inputs, nonfinite values other than missing-value NaN, and binary values outside 0/1 are rejected. In the reference implementation, `None` or numeric NaN is replaced by the stored development-cohort median. The desktop interface requires all measurements and binary selections before calculation. Preserve the original measurement definitions and input scales when evaluating the model.
-
-## Verify the implementation
-
-From the repository root:
-
-```powershell
-.venv\Scripts\python.exe model/verify_a3_model.py
 Push-Location app
 try {
     ..\.venv\Scripts\python.exe -m unittest discover -s tests -v
@@ -86,32 +50,35 @@ try {
 }
 ```
 
-The reference check compares all 10 synthetic vectors with an absolute error tolerance of 1e-12. Desktop tests require a graphical session and Tk. The pipeline adapter tests do not run the complete external image-processing engine.
-
-## Optional automatic retinal extraction
-
-Automatic extraction uses L-WNET artery/vein segmentation, optic-disc localization, and ARIA vessel measurement to obtain `VD_orig_artery` and `ratio_AV_medianDiameter`. These upstream components and their weights must be installed separately. Their absence does not prevent manual-input calculations.
-
-Follow [External pipeline setup](docs/EXTERNAL_PIPELINE.md) before running the WSL setup script. The tested engine configuration uses WSL 2, Ubuntu 24.04, GNU Octave 6.4.0, and the pinned Python dependencies. Setup installs a private environment under `~/.local/share/retinacad` in WSL. Numerical equivalence should be checked when changing an upstream component, model weight, or runtime version.
-
-An independently validated local command may also be configured through `RETINACAD_PIPELINE_COMMAND`; see [Local pipeline contract](app/EXTERNAL_PIPELINE_CONTRACT.md).
-
-## Build a Windows executable
-
-From an activated Python environment:
+With approved model files configured, check fixed inference against the 10 public synthetic A3 vectors:
 
 ```powershell
-.\app\build_windows.ps1 -InstallDependencies
+.venv\Scripts\python.exe model/verify_models.py --model A3
 ```
 
-The output is `app/dist/RetinaCAD/RetinaCAD.exe`. Keep its complete directory together. A source-only build supports manual input. Automatic extraction requires the separately installed components and WSL runtime. Before distributing a build that includes external source or weights, confirm the applicable redistribution terms.
+The absolute tolerance is `1e-5` to allow small CPU/GPU differences. A1F manifests and synthetic vectors describe the fixed model without the two OCTA predictors; `--model all` checks both when both approved fit states are available. These numerical checks do not estimate clinical performance.
 
-Compiled builds belong in GitHub Releases rather than the source tree.
+## Optional fundus extraction
 
-## Citation and third-party components
+Manual entry works without the image-processing engine. Automatic extraction uses separately installed L-WNET segmentation, optic-disc localization, and ARIA vessel measurements. It returns `ratio_AV_medianDiameter` and `ratio_AV_DF` using the study definitions.
 
-The associated manuscript is titled **Retinal Vascular Phenotypes in Coronary Artery Disease: A Genetic and Multimodal Imaging Study**. A final journal citation and DOI are not yet supplied in this repository.
+Follow [External pipeline setup](docs/EXTERNAL_PIPELINE.md). A local replacement can use the [pipeline contract](app/EXTERNAL_PIPELINE_CONTRACT.md). Obtain upstream source and weights separately under their applicable terms.
 
-The fundus phenotype method is described by Ortín Vela et al., *Nature Communications* (2024), DOI: [10.1038/s41467-024-52334-1](https://doi.org/10.1038/s41467-024-52334-1). The corresponding code resource is [Zenodo record 13347953](https://zenodo.org/records/13347953). L-WNET is available from [agaldran/lwnet](https://github.com/agaldran/lwnet).
+## Files
 
-Third-party license texts and notices are retained in `licenses/` and `app/runtime_licenses/`. No project-wide software license has been assigned to RetinaCAD in this package; public repository availability alone does not grant redistribution or reuse rights. See [Third-party notices](licenses/THIRD_PARTY_NOTICES.md).
+| Path | Contents |
+| --- | --- |
+| `app/retinacad/` | Interface, fixed-model loader, input and image checks, extraction adapter, and report export |
+| `app/tests/` | Tests that do not require private model states |
+| `app/wsl_engine/` | Optional local fundus extraction scripts |
+| `model/` | Public manifests, synthetic vectors, and numerical verification command |
+| `docs/` | Input definitions, model provenance, and pipeline setup |
+| `licenses/` | Retained third-party notices and license texts |
+
+## Methods and attribution
+
+Fundus phenotyping: Ortín Vela et al., *Nature Communications* (2024), [doi:10.1038/s41467-024-52334-1](https://doi.org/10.1038/s41467-024-52334-1); [code resource](https://zenodo.org/records/13347953).
+
+TabPFN: Hollmann et al., *Nature* (2025), [doi:10.1038/s41586-024-08328-6](https://doi.org/10.1038/s41586-024-08328-6); [upstream software](https://github.com/PriorLabs/TabPFN).
+
+Third-party components retain their original terms; see [Third-party notices](licenses/THIRD_PARTY_NOTICES.md). No project-wide software license has been assigned to RetinaCAD.

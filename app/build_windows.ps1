@@ -34,7 +34,8 @@ try {
         "--distpath", $DistDir,
         "--workpath", $WorkDir,
         "--specpath", $SpecDir,
-        "--add-data", "${ProjectRoot}\model;model",
+        "--add-data", "${ProjectRoot}\model\A3_TabPFN_manifest.json;model",
+        "--collect-all", "tabpfn",
         "--add-data", "${AppDir}\wsl_engine;wsl_engine",
         "--add-data", "${ProjectRoot}\retina_pipeline;retina_pipeline",
         "--collect-all", "PIL"

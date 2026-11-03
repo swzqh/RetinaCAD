@@ -28,7 +28,7 @@ class PipelineStatus:
 class PipelineResult:
     """Automatic retinal phenotype extraction output."""
 
-    vd: float
+    df_ratio: float
     ratio: float
     av_map: Path | None = None
     optic_disc_preview: Path | None = None
@@ -167,13 +167,13 @@ class LocalPipelineAdapter:
             raise RuntimeError("Automatic extraction did not create phenotypes.json")
         try:
             payload = json.loads(result_path.read_text(encoding="utf-8"))
-            vd = float(payload["VD"])
-            ratio = float(payload["Ratio"])
+            df_ratio = float(payload["ratio_AV_DF"])
+            ratio = float(payload["ratio_AV_medianDiameter"])
         except (KeyError, TypeError, ValueError, json.JSONDecodeError) as exc:
             raise ValueError("Automatic extraction returned invalid JSON") from exc
-        if not (0 <= vd <= 1 and 0 < ratio <= 3):
+        if not (0 < df_ratio <= 3 and 0 < ratio <= 3):
             raise ValueError("Automatic extraction output is outside validation limits")
-        return PipelineResult(vd=vd, ratio=ratio)
+        return PipelineResult(df_ratio=df_ratio, ratio=ratio)
 
     def _wsl_base_command(self) -> list[str]:
         return ["wsl.exe", "-d", self.distro, "--"]

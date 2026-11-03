@@ -1,9 +1,11 @@
 # Model provenance
 
-Model ID: `A3_RIDGE_LAMBDA_MIN_LOCKED_20260817`
+The public manifests describe fixed TabPFN 2.1.3 fit states. A3 is the default desktop model; A1F uses the same clinical and echocardiographic inputs and two fundus ratios without the two deep OCTA measures.
 
-The public model preserves all coefficients, intercepts, feature definitions, missing-value fills, scaling parameters, and validation metrics from the local fixed model. Only three internal source-file paths have been replaced by descriptive labels. The original source-file SHA-256 values remain in the model metadata. The public JSON has its own file checksum because that metadata change alters its bytes.
+Each manifest records predictor order, model identifier, permitted missing fields, fit-state and foundation-checkpoint SHA-256 hashes, cohort counts, and internal cross-validation results. Parameters are not estimated or selected during application use.
 
-Public model SHA-256: `908575fd24fba6b40155d14ccaaeb761fed0d689a1b4ec1b9002c672c1fb5db9`
+Fit states contain numerical training context and are provided on approved request to the corresponding author. They are excluded from this repository. Foundation checkpoints must be obtained separately from the pinned upstream source under its applicable terms. Public manifests exclude development-workstation paths.
 
-No patient-level records are included. The 10 reference cases in `A3_test_vectors.json` are synthetic numerical checks.
+The loader verifies the original fit state and checkpoint. TabPFN 2.1.3 records an absolute checkpoint path in `init_params.json`; only that path is changed in a temporary local archive. Fitted arrays and inference settings remain unchanged. Synthetic vectors check predictions within `1e-5`.
+
+The previous arterial-density ridge implementation is replaced by the current diameter-ratio and distance-factor-ratio schema. It is not loaded as a substitute when TabPFN files are unavailable.

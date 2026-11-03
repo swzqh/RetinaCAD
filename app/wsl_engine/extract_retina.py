@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Single-image, local-only VD and Ratio extraction engine."""
+"""Single-image, local-only distance-factor and diameter ratios extraction engine."""
 
 from __future__ import annotations
 
@@ -326,6 +326,20 @@ def compute_ratio(stats_file: Path) -> float:
     return ratio
 
 
+def compute_df_ratio(stats_file):
+    import pandas as pd
+    frame=pd.read_csv(stats_file,delimiter="\t")
+    if not {"DF","AVScore"}.issubset(frame.columns):
+        raise ValueError("ARIA segment statistics must contain DF and AVScore")
+    artery=frame.loc[frame["AVScore"]>0,"DF"].median()
+    vein=frame.loc[frame["AVScore"]<0,"DF"].median()
+    if not math.isfinite(artery) or not math.isfinite(vein) or vein<=0:
+        raise ValueError("No finite arterial and venous distance-factor medians")
+    ratio=float(artery/vein)
+    if not math.isfinite(ratio) or ratio<=0:raise ValueError("Invalid distance-factor ratio")
+    return ratio
+
+
 def extract(source: Path, output: Path, paths: dict[str, Path]) -> None:
     if not source.is_file():
         raise FileNotFoundError(f"Input image not found: {source}")
@@ -347,17 +361,17 @@ def extract(source: Path, output: Path, paths: dict[str, Path]) -> None:
         av_map = segment_vessels(paths, raw_image, av_dir)
         locate_optic_disc(raw_image, paths["od_weights"], optic_dir / "od_all.csv")
         stats_file = measure_vessels(paths, raw_root, av_dir, aria_output, image_list)
-        vd = compute_vd(av_map)
+        df_ratio = compute_df_ratio(stats_file)
         ratio = compute_ratio(stats_file)
-        if not (0 <= vd <= 1 and 0 < ratio <= 3):
+        if not (0 < df_ratio <= 3 and 0 < ratio <= 3):
             raise RuntimeError("Extracted phenotype values are outside validation limits")
         payload = {
-            "schema_version": "1.0",
-            "VD": vd,
-            "Ratio": ratio,
+            "schema_version": "2.0",
+            "ratio_AV_DF": df_ratio,
+            "ratio_AV_medianDiameter": ratio,
             "source_variables": {
-                "VD": "VD_orig_artery",
-                "Ratio": "ratio_AV_medianDiameter",
+                "ratio_AV_DF": "ratio_AV_DF",
+                "ratio_AV_medianDiameter": "ratio_AV_medianDiameter",
             },
         }
         output.write_text(json.dumps(payload, indent=2), encoding="utf-8")
